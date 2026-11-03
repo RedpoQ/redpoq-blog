@@ -30,8 +30,8 @@ export default defineConfig({
     }),
   ],
   i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+    locales: ["zh-CN"],
+    defaultLocale: "zh-CN",
     routing: {
       prefixDefaultLocale: false,
     },
@@ -39,8 +39,8 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [
-        remarkToc,
-        [remarkCollapse, { test: "Table of contents" }],
+        [remarkToc, { heading: "目录" }],
+        [remarkCollapse, { test: "目录", summary: (str: string) => str }],
       ],
       rehypePlugins: [rehypeCallouts, rehypeTableWrapper],
     }),
@@ -63,11 +63,47 @@ export default defineConfig({
     {
       name: "Google Sans Code",
       cssVariable: "--font-google-sans-code",
-      provider: fontProviders.google(),
+      provider: fontProviders.local(),
       fallbacks: ["monospace"],
-      weights: [300, 400, 500, 600, 700],
-      styles: ["normal", "italic"],
-      formats: ["woff", "ttf"],
+      options: {
+        variants: [
+          {
+            src: [
+              "./src/assets/fonts/google-sans-code/google-sans-code-latin-300-normal.woff",
+            ],
+            weight: "300",
+            style: "normal",
+          },
+          {
+            src: [
+              "./src/assets/fonts/google-sans-code/google-sans-code-latin-400-normal.woff",
+            ],
+            weight: "400",
+            style: "normal",
+          },
+          {
+            src: [
+              "./src/assets/fonts/google-sans-code/google-sans-code-latin-500-normal.woff",
+            ],
+            weight: "500",
+            style: "normal",
+          },
+          {
+            src: [
+              "./src/assets/fonts/google-sans-code/google-sans-code-latin-600-normal.woff",
+            ],
+            weight: "600",
+            style: "normal",
+          },
+          {
+            src: [
+              "./src/assets/fonts/google-sans-code/google-sans-code-latin-700-normal.woff",
+            ],
+            weight: "700",
+            style: "normal",
+          },
+        ],
+      },
     },
   ],
   env: {

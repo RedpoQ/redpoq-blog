@@ -79,6 +79,20 @@ const t = useTranslations(locale);
         bundlePath,
         showImages: false,
         showSubResults: true,
+        translations: {
+          placeholder: "搜索文章…",
+          clear_search: "清除",
+          load_more: "加载更多结果",
+          search_label: "搜索",
+          filters_label: "筛选",
+          zero_results: "没有找到与 [SEARCH_TERM] 相关的内容",
+          many_results: "找到 [COUNT] 条与 [SEARCH_TERM] 相关的结果",
+          one_result: "找到 [COUNT] 条与 [SEARCH_TERM] 相关的结果",
+          alt_search:
+            "没有找到与 [SEARCH_TERM] 相关的内容，改为显示 [DIFFERENT_TERM] 的结果",
+          search_suggestion: "改为搜索 [SEARCH_TERM]",
+          searching: "正在搜索 [SEARCH_TERM]…",
+        },
         processTerm: function (term: string) {
           params.set("q", term); // Update the `q` parameter in the URL
           history.replaceState(history.state, "", "?" + params.toString()); // Push the new URL without reloading
