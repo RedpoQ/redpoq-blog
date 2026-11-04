@@ -2,7 +2,7 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://blog.redpoq.de5.net/",
+    url: "https://redpoq-blog.pages.dev/",
     title: "RedpoQ Blog",
     description: "RedpoQ 的中文技术博客，记录开发、工具与学习过程。",
     author: "RedpoQ",

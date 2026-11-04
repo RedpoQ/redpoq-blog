@@ -29,11 +29,15 @@ npm run preview  # 预览构建结果
 
 ## 部署
 
-目标平台为 Cloudflare Pages，计划域名 `blog.redpoq.de5.net`。本阶段只完成代码仓库与本地构建，未配置 DNS 或 Pages 项目。
+平台为 Cloudflare Pages（GitHub 集成，`main` 分支推送自动部署），当前预览地址：
+
+https://redpoq-blog.pages.dev
 
 - 构建命令：`npm run build`
 - 输出目录：`dist`
-- Node：`>=22.23.4`
+- Node：`>=22.23.4`（Pages 项目已设置 `NODE_VERSION=22.23.4`）
+
+计划正式域名 `blog.redpoq.de5.net` 尚未绑定，站点 `site.url` 暂指向 `pages.dev` 地址；绑定域名后需同步修改 `astro-paper.config.ts` 中的 `site.url`。
 
 ## 许可证
 
